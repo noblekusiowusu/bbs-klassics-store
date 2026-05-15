@@ -1,10 +1,8 @@
 FROM tomcat:9.0
 
-RUN rm -rf /usr/local/tomcat/webapps/ROOT
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-RUN mkdir -p /usr/local/tomcat/webapps/ROOT
-
-COPY web/ /usr/local/tomcat/webapps/ROOT/
+COPY dist/bbs.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
 
